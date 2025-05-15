@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommonActions {
-    private final static String remoteWd = "http://localhost:4444/";
+    private final static String remoteWd = "http://selenoid:4444/";
     public static RemoteWebDriver createDriver(){
         Map<String, Object> selenoidObjects = new HashMap<>();
         selenoidObjects.put("enableVnc", true);
