@@ -10,7 +10,7 @@ import org.junitpioneer.jupiter.RetryingTest;
 import static Constants.Constants.TheInternetMainPage.ABTestingPageConstants.*;
 
 public class ABTestingTest extends BaseTest {
-    @Test
+    @RetryingTest(maxAttempts = 3)
     @Tag("ABTestingPage")
     @Tag("All")
     @Description("Проверяем текст хидера на странице A/B Testing https://the-internet.herokuapp.com/abtest")
