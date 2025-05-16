@@ -45,4 +45,24 @@ public class MainPageTest extends BaseTest {
             throw e;
         }
     }
+
+    @Test
+    @Description("Проверяем названия ссылок на главной странице https://the-internet.herokuapp.com/")
+    void checkMainPageLinksClickableTest(){
+        AllureLabels.setParentSuiteName("The Internet");
+        AllureLabels.setSuiteName("Страницы");
+        AllureLabels.setSubSuiteName("Главная страница");
+        AllureLabels.setTestCaseName("Проверка ссылок главной страницы на кликабельность");
+
+        try{
+            basePage.driverOpen(MAIN_PAGE_URL);
+
+            mainPage.checkMainPageLinksIsClickable(
+                    mainPage.getMainPageLinksElement()
+            );
+        }catch (AssertionError e) {
+            basePage.attachScreenshotToReport();
+            throw e;
+        }
+    }
 }

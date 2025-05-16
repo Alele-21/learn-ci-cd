@@ -27,4 +27,7 @@ public class MainPage extends BasePage {
                 .collect(Collectors.toList());
     }
 
+    public List<WebElement> getMainPageLinksElement(){
+        return getElementList(MAIN_PAGE_LINKS_GENERAL_L);
+    }
 }
