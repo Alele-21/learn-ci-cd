@@ -24,7 +24,7 @@ public class MainPageSteps extends MainPage{
     public MainPageSteps checkMainPageLinksText(List<String> listOfLinksText){
         Allure.step("Проверить названия ссылок главной страницы", () -> {
             Assertions.assertEquals(listOfLinksText, getMainPageLinksText(),
-                    "Названия ссылок на странице указалы неверно. " +
+                    "Названия ссылок на странице указаны неверно. " +
                             "Ожидались ссылки c названиями:\n" + listOfLinksText);
         });
 
