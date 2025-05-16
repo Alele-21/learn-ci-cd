@@ -1,4 +1,4 @@
-package Steps;
+package Steps.TheInternetSteps;
 
 import Pages.TheInternetPages.MainPage;
 import io.qameta.allure.Allure;

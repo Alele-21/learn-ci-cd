@@ -2,8 +2,8 @@ package Tests.Base;
 
 import Common.CommonActions;
 import Pages.Base.BasePage;
-import Pages.TheInternetPages.MainPage;
-import Steps.MainPageSteps;
+import Steps.TheInternetSteps.ABTestingPageSteps;
+import Steps.TheInternetSteps.MainPageSteps;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 
@@ -15,6 +15,7 @@ public class BaseTest {
 
     protected BasePage basePage = new BasePage(driver);
     protected MainPageSteps mainPage = new MainPageSteps(driver);
+    protected ABTestingPageSteps abTestingPage = new ABTestingPageSteps(driver);
 
     @AfterEach
     public void tearDown() {
