@@ -7,6 +7,7 @@ import Steps.MainPageSteps;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 
+import static Common.Configs.ATTACH_SCREENSHOT_TO_REPORT;
 import static Common.Configs.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
@@ -17,10 +18,9 @@ public class BaseTest {
 
     @AfterEach
     public void tearDown() {
-        if (!HOLD_BROWSER_OPEN) {
-            basePage.attachScreenshotToReport();
-            driver.quit();
-        }
+        if(ATTACH_SCREENSHOT_TO_REPORT) basePage.attachScreenshotToReport();
+
+        if (!HOLD_BROWSER_OPEN) driver.quit();
     }
 
 }
