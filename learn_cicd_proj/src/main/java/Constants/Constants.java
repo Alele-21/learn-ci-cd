@@ -6,6 +6,10 @@ public class Constants {
     }
 
     public static class TheInternetMainPage{
-        public static final String MAIN_PAGE_HEADER = "Welcome to the-internet";
+        public static class MainPageConstants{
+            public static final String MAIN_PAGE_HEADER = "Welcome to the-internet!";
+            public static final String MAIN_PAGE_URL = "https://the-internet.herokuapp.com/";
+        }
+
     }
 }

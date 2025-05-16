@@ -9,7 +9,6 @@ import java.io.ByteArrayInputStream;
 import java.time.Duration;
 
 import static Constants.Constants.Waits.EXPLICIT_WAIT;
-import static com.codeborne.selenide.Selenide.open;
 
 public class BasePage {
     protected WebDriver driver;
@@ -35,7 +34,11 @@ public class BasePage {
         driver.get(URL);
     }
 
-    public WebElement findElementByLocator(By locator){
+    public WebElement getVisibleElement(By locator){
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public String getElementText(By locator){
+        return getVisibleElement(locator).getText();
     }
 }
