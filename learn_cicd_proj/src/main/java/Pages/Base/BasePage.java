@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.ByteArrayInputStream;
 import java.time.Duration;
+import java.util.List;
 
 import static Constants.Constants.Waits.EXPLICIT_WAIT;
 
@@ -38,7 +39,15 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public String getElementText(By locator){
-        return getVisibleElement(locator).getText();
+    public WebElement getClickableElement(By locator){
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    public String getElementText(WebElement el){
+        return el.getText();
+    }
+
+    public List<WebElement> getElementList(By generalLocator){
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(generalLocator));
     }
 }
