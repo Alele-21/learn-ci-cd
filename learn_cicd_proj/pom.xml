@@ -36,7 +36,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <groups>${testCategory}</groups> <!-- здесь будет переменная -->
+                    <properties>
+                        <includeTags>${testCategory}</includeTags>
+                    </properties>
                 </configuration>
             </plugin>
         </plugins>
