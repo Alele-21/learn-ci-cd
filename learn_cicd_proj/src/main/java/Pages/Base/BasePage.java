@@ -50,4 +50,14 @@ public class BasePage {
     public List<WebElement> getElementList(By generalLocator){
         return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(generalLocator));
     }
+
+
+    public boolean isElementClickable(WebElement element){
+        try{
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            return true;
+        }catch(Exception e ){
+            return false;
+        }
+    }
 }
