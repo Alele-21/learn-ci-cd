@@ -22,7 +22,7 @@ public class ABTestingPageSteps extends ABTestingPage {
 
     public ABTestingPageSteps checkABTestingPageText(String expectedPageText){
         Allure.step("Проверить текст хидера на странице A/B Testing", () -> {
-            Assertions.assertEquals(expectedPageText, getABTestingHeaderText(),
+            Assertions.assertEquals(expectedPageText, getABTestingPageText(),
                     String.format("Текст на странице A/B Testing указан неверно. " +
                             "Ожидался: \"%s\"", expectedPageText));
         });
