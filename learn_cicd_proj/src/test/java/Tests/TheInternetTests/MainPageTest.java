@@ -18,14 +18,8 @@ public class MainPageTest extends BaseTest {
         AllureLabels.setSubSuiteName("Главная страница");
         AllureLabels.setTestCaseName("Проверка текста хидера главной страницы");
 
-        try {
-            basePage.driverOpen(MAIN_PAGE_URL);
-
-            mainPage.checkMainPageHeaderText(MAIN_PAGE_HEADER);
-        } catch (AssertionError e) {
-            basePage.attachScreenshotToReport();
-            throw e;
-        }
+        basePage.driverOpen(MAIN_PAGE_URL);
+        mainPage.checkMainPageHeaderText(MAIN_PAGE_HEADER);
     }
 
     @Test
@@ -36,14 +30,8 @@ public class MainPageTest extends BaseTest {
         AllureLabels.setSubSuiteName("Главная страница");
         AllureLabels.setTestCaseName("Проверка текста ссылок главной страницы");
 
-        try{
-            basePage.driverOpen(MAIN_PAGE_URL);
-
-            mainPage.checkMainPageLinksText(MAIN_PAGE_LINKS);
-        }catch (AssertionError e) {
-            basePage.attachScreenshotToReport();
-            throw e;
-        }
+        basePage.driverOpen(MAIN_PAGE_URL);
+        mainPage.checkMainPageLinksText(MAIN_PAGE_LINKS);
     }
 
     @Test
@@ -54,15 +42,9 @@ public class MainPageTest extends BaseTest {
         AllureLabels.setSubSuiteName("Главная страница");
         AllureLabels.setTestCaseName("Проверка ссылок главной страницы на кликабельность");
 
-        try{
-            basePage.driverOpen(MAIN_PAGE_URL);
-
-            mainPage.checkMainPageLinksIsClickable(
-                    mainPage.getMainPageLinksElement()
-            );
-        }catch (AssertionError e) {
-            basePage.attachScreenshotToReport();
-            throw e;
-        }
+        basePage.driverOpen(MAIN_PAGE_URL);
+        mainPage.checkMainPageLinksIsClickable(
+                mainPage.getMainPageLinksElement()
+        );
     }
 }

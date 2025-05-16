@@ -18,7 +18,7 @@ public class BaseTest {
     @AfterEach
     public void tearDown() {
         if (!HOLD_BROWSER_OPEN) {
-
+            basePage.attachScreenshotToReport();
             driver.quit();
         }
     }
