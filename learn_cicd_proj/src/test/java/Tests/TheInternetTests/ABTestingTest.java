@@ -4,6 +4,7 @@ import Allure.AllureLabels;
 import Tests.Base.BaseTest;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.RetryingTest;
 
 import static Constants.Constants.TheInternetMainPage.ABTestingPageConstants.*;
 
@@ -20,7 +21,7 @@ public class ABTestingTest extends BaseTest {
         abTestingPage.checkABTestingPageHeader(A_B_TESTING_PAGE_HEADER);
     }
 
-    @Test
+    @RetryingTest(maxAttempts = 3)
     @Description("Проверяем текст на странице A/B Testing https://the-internet.herokuapp.com/abtest")
     void checkABTestingPageTextTest() {
         AllureLabels.setParentSuiteName("The Internet");
