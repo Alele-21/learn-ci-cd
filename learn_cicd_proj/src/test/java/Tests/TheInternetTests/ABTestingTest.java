@@ -3,13 +3,16 @@ package Tests.TheInternetTests;
 import Allure.AllureLabels;
 import Tests.Base.BaseTest;
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junitpioneer.jupiter.RetryingTest;
 
 import static Constants.Constants.TheInternetMainPage.ABTestingPageConstants.*;
 
 public class ABTestingTest extends BaseTest {
-    @Test
+    @RetryingTest(maxAttempts = 3)
+    @Tag("ABTestingPage")
+    @Tag("All")
     @Description("Проверяем текст хидера на странице A/B Testing https://the-internet.herokuapp.com/abtest")
     void checkABTestingPageHeaderTextTest() {
         AllureLabels.setParentSuiteName("The Internet");
@@ -22,6 +25,8 @@ public class ABTestingTest extends BaseTest {
     }
 
     @RetryingTest(maxAttempts = 3)
+    @Tag("ABTestingPage")
+    @Tag("All")
     @Description("Проверяем текст на странице A/B Testing https://the-internet.herokuapp.com/abtest")
     void checkABTestingPageTextTest() {
         AllureLabels.setParentSuiteName("The Internet");
